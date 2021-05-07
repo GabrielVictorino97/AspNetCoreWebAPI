@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using SmartSchool.WebApi.DTOs;
+using SmartSchool.WebApi.V1.DTOs;
 
-namespace SmartSchool.WebAPI.V1.Dtos
+namespace SmartSchool.WebApi.V1.DTOs
 {
     public class DisciplinaDto
     {

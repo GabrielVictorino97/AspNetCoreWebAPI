@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchoolWebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.V1.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.V1.Controllers.AlunoController.#ctor(SmartSchool.WebApi.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.V1.Controllers.AlunoController.GetAll">
+            <summary>
+            Método responsável para retornar todos os alunos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.V1.Controllers.AlunoController.GetRegister">
+            <summary>
+            Método responsável por retornar apenas um único aluno
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.V1.Controllers.AlunoController.Get(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um único aluno por meio do Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.V2.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.V2.Controllers.AlunoController.#ctor(SmartSchool.WebApi.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repository"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.V2.Controllers.AlunoController.GetAll">
+            <summary>
+            Método responsável para retornar todos os alunos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.V2.Controllers.AlunoController.GetRegister">
+            <summary>
+            Método responsável por retornar apenas um único aluno
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.V2.Controllers.AlunoController.Get(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um único aluno por meio do Id
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

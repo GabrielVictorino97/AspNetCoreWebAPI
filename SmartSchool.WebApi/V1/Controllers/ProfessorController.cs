@@ -5,12 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.Models;
 using SmartSchool.WebApi.Data;
-using SmartSchool.WebAPI.V1.Dtos;
+using SmartSchool.WebApi.V1.DTOs;
 
-namespace SmartSchool.Controllers
+namespace SmartSchool.V1.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProfessorController : ControllerBase
     {
         private readonly IRepository _repository;
