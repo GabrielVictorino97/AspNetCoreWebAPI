@@ -20,7 +20,7 @@ namespace SmartSchool.WebApi.Data
         {
            _context.Remove(entity);
         }
-        public void Updtate<T>(T entity) where T : class
+        public void Update<T>(T entity) where T : class
         {
            _context.Update(entity);
         }
@@ -62,7 +62,7 @@ namespace SmartSchool.WebApi.Data
             return query.ToArray();
         }
 
-        public Aluno GetAllAlunoById(int alunoId, bool includeProfessor = false)
+        public Aluno GetAlunoById(int alunoId, bool includeProfessor = false)
         {
             IQueryable<Aluno> query = _context.Alunos;
 
@@ -95,24 +95,27 @@ namespace SmartSchool.WebApi.Data
             return query.ToArray();
             
         }
-
-        public Professor[] GetAllProfessoresByDisciplinaId(int disciplinaId, bool includeAlunos = false)
+        public Professor[] GetProfessoresByAlunoId(int alunoId, bool includeAlunos = false)
         {
-           IQueryable<Professor> query = _context.Professores;
+            IQueryable<Professor> query = _context.Professores;
 
-            if(includeAlunos){
-               query = query.Include(a => a.Disciplinas)
-                            .ThenInclude(ad => ad.AlunosDisciplinas)
-                            .ThenInclude(d => d.Aluno);
-           }
+            if (includeAlunos)
+            {
+                query = query.Include(p => p.Disciplinas)
+                             .ThenInclude(d => d.AlunosDisciplinas)
+                             .ThenInclude(ad => ad.Aluno);
+            }
 
-            query = query.AsNoTracking().OrderBy(a => a.Id)
-                         .Where(aluno => aluno.Disciplinas.Any(d => d.AlunosDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId)));
+            query = query.AsNoTracking()
+                         .OrderBy(a => a.Id)
+                         .Where(aluno => aluno.Disciplinas.Any(
+                             d => d.AlunosDisciplinas.Any(ad => ad.AlunoId == alunoId)
+                         ));
 
             return query.ToArray();
         }
 
-        public Professor GetAllProfessorById(int professorId, bool includeProfessor = false)
+        public Professor GetProfessorById(int professorId, bool includeProfessor = false)
         {
             IQueryable<Professor> query = _context.Professores;
 
